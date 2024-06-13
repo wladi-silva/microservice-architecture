@@ -15,7 +15,16 @@ public class Schedule {
     private Long id;
 
     private Long roomId;
+
     private LocalDateTime timestamp;
+
+    public Schedule() {
+        
+    }
+
+    public Schedule(Long roomId) {
+        this.roomId = roomId;
+    }
 
     public Schedule(Long roomId, LocalDateTime timestamp) {
         this.roomId = roomId;

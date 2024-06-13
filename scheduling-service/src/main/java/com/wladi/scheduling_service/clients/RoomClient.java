@@ -13,10 +13,10 @@ import com.wladi.scheduling_service.models.Room;
 @FeignClient(name = "room-management-service")
 public interface RoomClient {
 
-    @PutMapping("/{id}")
+    @PutMapping("rooms/{id}")
     void updateRoom(@PathVariable Long id, @RequestBody Room room); 
 
-    @GetMapping("/{id}")
+    @GetMapping("rooms/{id}")
     Optional<Room> getRoomById(@PathVariable Long id);
 
 }

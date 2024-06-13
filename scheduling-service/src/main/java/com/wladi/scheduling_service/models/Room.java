@@ -6,6 +6,10 @@ public class Room {
     private String name;
     private String status;
 
+    public Room() {
+        
+    }
+
     public Room(String name, String status) {
         this.name = name;
         this.status = status;

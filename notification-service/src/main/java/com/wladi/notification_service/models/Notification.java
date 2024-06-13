@@ -18,6 +18,10 @@ public class Notification {
     private Long recipientId;
     private LocalDateTime timestamp;
 
+    public Notification() {
+        
+    }
+
     public Notification(String status, Long recipientId, LocalDateTime timestamp) {
         this.status = status;
         this.recipientId = recipientId;
@@ -54,6 +58,11 @@ public class Notification {
 
     public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
+    }
+
+    @Override
+    public String toString() {
+        return "Notification [id=" + id + ", status=" + status + ", recipientId=" + recipientId + ", timestamp=" + timestamp + "]";
     }
 
 }

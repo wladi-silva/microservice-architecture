@@ -18,8 +18,9 @@ public class RoomService {
 
     private NotificationClient notificationClient;
 
-    public RoomService(RoomRepository roomRepository) {
+    public RoomService(RoomRepository roomRepository, NotificationClient notificationClient) {
         this.roomRepository = roomRepository;
+        this.notificationClient = notificationClient;
     }
 
     public Room saveRoom(Room room) {
@@ -42,8 +43,6 @@ public class RoomService {
         room.setName(roomDetails.getName());
         room.setStatus(roomDetails.getStatus());
         Room updatedRoom = roomRepository.save(room);
-        Notification notification = new Notification(roomDetails.getStatus(), room.getId(), LocalDateTime.now());
-        notificationClient.notify(notification);
         return updatedRoom;
     }
 
